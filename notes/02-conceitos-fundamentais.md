@@ -132,8 +132,6 @@
 
 - Facilita por exemplo a troca de banco de dados, pois será necessário fazer alterações **APENAS** nos adaptadores (pois o domínio está completamente isolado)
 
-
-
 ## Benefícios da Arquitetura Hexagonal
 
 - Isolamento **TOTAL** do **Domínio**
