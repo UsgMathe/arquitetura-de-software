@@ -1,10 +1,13 @@
-const Appointment = require("./appointment");
-const Exam = require("./exam");
-const Doctor = require("./doctor");
-const Patient = require("./patient");
-const MedicalRecord = require("./medicalRecord");
-const Address = require("./address");
-const EmergencyContact = require("./emergencyContact");
+import { Doctor } from "./Doctor/doctor.js";
+import { Allergy } from "./Patient/Allergy.js";
+import { Appointment } from "./Patient/Appointment.js";
+import { Exam } from "./Patient/Exam.js";
+import { Patient } from "./Patient/patient.js";
+import { Diagnosis } from "./Patient/record/Diagnosis.js";
+import { Medication } from "./Patient/record/Medication.js";
+import { Treatment } from "./Patient/record/Treatment.js";
+import { Address } from "./Shared/address.js";
+import { EmergencyContact } from "./Shared/emergencyContact.js";
 
 const address = new Address(
   "Rua A",
@@ -21,56 +24,57 @@ const emergencyContact = new EmergencyContact(
 
 const patient = new Patient(
   1,
-  "123.456.789-00",
-  "Matheus Lopes",
-  "1990-01-01",
+  "123456789",
+  "Matheus",
+  "2004-01-01",
   "Masculino",
-  "O+",
-  "Nenhuma",
+  "O",
   address,
-  "(11) 91234-5678",
-  "matheus.lopes@example.com",
-  emergencyContact,
+  "(42) 99999-9999",
+  "matheus@email.com",
+  emergencyContact
 );
 
 const doctor = new Doctor(
   1,
   "123456789",
-  "Dr. Carlos Silva",
+  "Dr. Carlos",
   ["Cardiologia", "Clínica Geral"],
-  "(11) 91234-5678",
+  "(11) 98765-4321",
 );
-
-doctor.addWorkingHours("Segunda-feira", "08:00 - 12:00");
-doctor.addWorkingHours("Quarta-feira", "13:00 - 17:00");
-doctor.addWorkingHours("Sexta-feira", "08:00 - 12:00");
 
 const appointment = new Appointment(
   1,
-  "2023-01-01",
+  "2022-01-01",
   patient,
   doctor,
   "Dor no peito",
   "Agendada",
-  "Paciente relatou dor no peito após esforço físico.",
+  "Paciente relatou dor no peito após esforço físico."
 );
 
 const exam = new Exam(
   1,
   "Hemograma",
   "Normal",
-  "2023-01-01",
-  "Laboratório X",
-  "Dr. José Lopes",
-  patient,
+  "2026-01-10",
+  "Laboratório Central",
+  "Dra. Ana",
+  patient
 );
 
-const medicalRecord = new MedicalRecord(1, patient);
+doctor.addWorkingHours("Segunda-feira", "08:00 - 12:00");
+doctor.addWorkingHours("Quarta-feira", "14:00 - 18:00");
+doctor.addWorkingHours("Sexta-feira", "08:00 - 12:00");
+
+patient.addAllergy(new Allergy("Penicilina"));
 
 patient.scheduleAppointment(appointment);
 patient.addExam(exam);
-medicalRecord.addDiagnosis("Hipertensão");
-medicalRecord.addTreatment("Redução no consumo de sal");
-medicalRecord.addMedication("Ácido acetilsalicílico");
 
-console.log(doctor.listWorkingHours());
+patient.medicalRecord.addDiagnosis(new Diagnosis("Hipertensão"));
+patient.medicalRecord.addTreatment(new Treatment("Redução no consumo de sal"));
+patient.medicalRecord.addMedication(new Medication("Captopril", "25mg"));
+
+
+console.log(patient.medicalRecord.medications);
