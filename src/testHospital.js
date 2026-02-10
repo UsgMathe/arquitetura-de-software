@@ -1,13 +1,17 @@
-import { Doctor } from "./doctor/doctor.js";
-import { Allergy } from "./patient/Allergy.js";
-import { Appointment } from "./patient/Appointment.js";
-import { Exam } from "./patient/Exam.js";
-import { Patient } from "./patient/patient.js";
-import { Diagnosis } from "./patient/record/Diagnosis.js";
-import { Medication } from "./patient/record/Medication.js";
-import { Treatment } from "./patient/record/Treatment.js";
 import { Address } from "./shared/address.js";
 import { EmergencyContact } from "./shared/emergencyContact.js";
+
+import { Doctor } from "./doctor/doctor.js";
+import { DoctorRepository } from "./doctor/DoctorRepository.js";
+
+import { Patient } from "./patient/patient.js";
+import { PatientRepository } from "./patient/PatientRepository.js";
+
+import { Appointment } from "./patient/Appointment.js";
+import { AppointmentRepository } from "./patient/AppointmentRepository.js";
+
+import { Exam } from "./patient/Exam.js"
+import { ExamRepository } from "./patient/ExamRepository.js";
 
 const address = new Address(
   "Rua A",
@@ -63,18 +67,26 @@ const exam = new Exam(
   patient
 );
 
-doctor.addWorkingHours("Segunda-feira", "08:00 - 12:00");
-doctor.addWorkingHours("Quarta-feira", "14:00 - 18:00");
-doctor.addWorkingHours("Sexta-feira", "08:00 - 12:00");
+// ---------------------------------------------------------
+const patientRepository = new PatientRepository();
+const doctorRepository = new DoctorRepository();
+const appointmentRepository = new AppointmentRepository();
+const examRepository = new ExamRepository();
+// ---------------------------------------------------------
 
-patient.addAllergy(new Allergy("Penicilina"));
+doctorRepository.add(doctor.id, doctor);
+patientRepository.add(patient.id, patient);
+appointmentRepository.add(appointment.id, appointment);
+examRepository.add(exam.id, exam);
 
-patient.scheduleAppointment(appointment);
-patient.addExam(exam);
+const foundPatient = patientRepository.findById(1);
+const foundDoctor = doctorRepository.findById(1);
+const foundAppointment = appointmentRepository.findById(1);
+const foundExam = examRepository.findById(1);
 
-patient.medicalRecord.addDiagnosis(new Diagnosis("Hipertensão"));
-patient.medicalRecord.addTreatment(new Treatment("Redução no consumo de sal"));
-patient.medicalRecord.addMedication(new Medication("Captopril", "25mg"));
+console.log({ foundPatient });
+console.log({ foundDoctor });
+console.log({ foundAppointment });
+console.log({ foundExam });
 
-
-console.log(patient.medicalRecord.medications);
+console.log(doctorRepository.findBySpecialty("Cardiologia"));

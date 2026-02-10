@@ -1,11 +1,11 @@
 import { WorkingHours } from "./WorkingHours.js";
 
 export class Doctor {
-  constructor(id, rcm, name, specialty, phone) {
+  constructor(id, rcm, name, specialties, phone) {
     this.id = id;
     this.rcm = rcm;
     this.name = name;
-    this.specialty = specialty;
+    this.specialties = specialties;
     this.phone = phone;
     this.workingHours = new WorkingHours();
   }
