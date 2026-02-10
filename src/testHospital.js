@@ -1,10 +1,25 @@
-const Consulta = require("./consulta");
-const Exame = require("./exame");
-const Medico = require("./medico");
-const Paciente = require("./paciente");
-const Prontuario = require("./prontuario");
+const Appointment = require("./appointment");
+const Exam = require("./exam");
+const Doctor = require("./doctor");
+const Patient = require("./patient");
+const MedicalRecord = require("./medicalRecord");
+const Address = require("./address");
+const EmergencyContact = require("./emergencyContact");
 
-const paciente1 = new Paciente(
+const address = new Address(
+  "Rua A",
+  "123",
+  "São Paulo",
+  "SP",
+  "12345-678"
+);
+
+const emergencyContact = new EmergencyContact(
+  "Maria Silva",
+  "(11) 98765-4321"
+);
+
+const patient = new Patient(
   1,
   "123.456.789-00",
   "Matheus Lopes",
@@ -12,47 +27,50 @@ const paciente1 = new Paciente(
   "Masculino",
   "O+",
   "Nenhuma",
-  "Rua A, 123",
+  address,
   "(11) 91234-5678",
   "matheus.lopes@example.com",
-  { nome: "Maria Silva", telefone: "(11) 98765-4321" },
+  emergencyContact,
 );
 
-const medico1 = new Medico(
+const doctor = new Doctor(
   1,
   "123456789",
   "Dr. Carlos Silva",
   ["Cardiologia", "Clínica Geral"],
   "(11) 91234-5678",
-  { dias: ["Segunda", "Quarta", "Sexta"], horario: "08:00 - 12:00" },
 );
 
-const consulta1 = new Consulta(
+doctor.addWorkingHours("Segunda-feira", "08:00 - 12:00");
+doctor.addWorkingHours("Quarta-feira", "13:00 - 17:00");
+doctor.addWorkingHours("Sexta-feira", "08:00 - 12:00");
+
+const appointment = new Appointment(
   1,
   "2023-01-01",
-  paciente1,
-  medico1,
+  patient,
+  doctor,
   "Dor no peito",
   "Agendada",
   "Paciente relatou dor no peito após esforço físico.",
 );
 
-const exame1 = new Exame(
+const exam = new Exam(
   1,
   "Hemograma",
   "Normal",
   "2023-01-01",
   "Laboratório X",
   "Dr. José Lopes",
-  paciente1,
+  patient,
 );
 
-const prontuario1 = new Prontuario(1, paciente1);
+const medicalRecord = new MedicalRecord(1, patient);
 
-paciente1.agendarConsulta(consulta1);
-paciente1.adicionarExame(exame1);
-prontuario1.adicionarDiagnostico("Hipertensão");
-prontuario1.adicionarTratamento("Redução no consumo de sal");
-prontuario1.adicionarMedicamento("Ácido acetilsalicílico");
+patient.scheduleAppointment(appointment);
+patient.addExam(exam);
+medicalRecord.addDiagnosis("Hipertensão");
+medicalRecord.addTreatment("Redução no consumo de sal");
+medicalRecord.addMedication("Ácido acetilsalicílico");
 
-console.log(prontuario1);
+console.log(doctor.listWorkingHours());
