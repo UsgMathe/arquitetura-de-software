@@ -1,13 +1,13 @@
-import { Doctor } from "./Doctor/doctor.js";
-import { Allergy } from "./Patient/Allergy.js";
-import { Appointment } from "./Patient/Appointment.js";
-import { Exam } from "./Patient/Exam.js";
-import { Patient } from "./Patient/patient.js";
-import { Diagnosis } from "./Patient/record/Diagnosis.js";
-import { Medication } from "./Patient/record/Medication.js";
-import { Treatment } from "./Patient/record/Treatment.js";
-import { Address } from "./Shared/address.js";
-import { EmergencyContact } from "./Shared/emergencyContact.js";
+import { Doctor } from "./doctor/doctor.js";
+import { Allergy } from "./patient/Allergy.js";
+import { Appointment } from "./patient/Appointment.js";
+import { Exam } from "./patient/Exam.js";
+import { Patient } from "./patient/patient.js";
+import { Diagnosis } from "./patient/record/Diagnosis.js";
+import { Medication } from "./patient/record/Medication.js";
+import { Treatment } from "./patient/record/Treatment.js";
+import { Address } from "./shared/address.js";
+import { EmergencyContact } from "./shared/emergencyContact.js";
 
 const address = new Address(
   "Rua A",
