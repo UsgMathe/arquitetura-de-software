@@ -5,6 +5,10 @@ export class PatientRepository extends Repository {
     super();
   }
 
+  findById(id) {
+    return this.findById(id);
+  }
+
   findByName(name) {
     return this.findAll().filter(patient => patient.name === name);
   }
