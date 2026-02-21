@@ -1,4 +1,4 @@
-[⬅️Voltar](../readme.md)
+[⬅️Voltar](./02-conceitos-fundamentais.md)
 
 # Entidades e Objetos de Valor
 
@@ -93,4 +93,4 @@
 
 <img src="../images/2026-02-10-10-30-55-image.png" />
 
-[Próximo ➡️](04-agragados.md)
+[Próximo ➡️](./04-agragados.md)

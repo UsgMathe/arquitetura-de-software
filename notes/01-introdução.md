@@ -1,4 +1,4 @@
-[⬅️Voltar](../readme.md)
+[⬅️Voltar](./readme.md)
 
 # Introdução
 
@@ -29,4 +29,4 @@
 
 - Não indicado para projetos pequenos
 
-[Próximo ➡️](02-conceitos-fundamentais.md)
+[Próximo ➡️](./02-conceitos-fundamentais.md)

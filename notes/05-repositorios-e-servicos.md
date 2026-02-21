@@ -1,4 +1,4 @@
-[⬅️Voltar](../readme.md)
+[⬅️Voltar](./04-agragados.md)
 
 # Repositórios e Serviços
 
@@ -38,4 +38,4 @@ _Elementos do Modelo_
 
 3. **Serviços de Infraestrutura**
 
-[Próximo ➡️](06-integracao-e-aplicacao.md)
+[Próximo ➡️](./06-integracao-e-aplicacao.md)

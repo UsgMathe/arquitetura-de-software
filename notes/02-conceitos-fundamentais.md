@@ -1,4 +1,4 @@
-[⬅️Voltar](../readme.md)
+[⬅️Voltar](./01-introdução.md)
 
 # Conceitos Fundamentais
 
@@ -146,4 +146,4 @@
 - Boa para projetos de **GRANDE PORTE**
   - **PODE SE TORNAR DIFÍCIL DE USAR EM PROJETOS MENORES**
 
-[Próximo ➡️](03-entidades-e-objetos-de-valor.md)
+[Próximo ➡️](./03-entidades-e-objetos-de-valor.md)

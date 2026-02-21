@@ -1,4 +1,4 @@
-[⬅️Voltar](../readme.md)
+[⬅️Voltar](./05-repositorios-e-servicos.md)
 
 # Integração e Aplicação
 
@@ -162,4 +162,4 @@ Parte técnica do sistema.
 
 👉 Implementa o que o Domain definiu como abstração.
 
-[Próximo ➡️](07-conceitos-avançados.md)
+[Próximo ➡️](./07-conceitos-avançados.md)

@@ -1,4 +1,4 @@
-[⬅️Voltar](../readme.md)
+[⬅️Voltar](./03-entidades-e-objetos-de-valor.md)
 
 # Agregados
 
@@ -52,4 +52,4 @@
 
 <img src="../images/2026-02-10-11-49-08-image.png" />
 
-[Próximo ➡️](05-repositorios-e-servicos.md)
+[Próximo ➡️](./05-repositorios-e-servicos.md)
