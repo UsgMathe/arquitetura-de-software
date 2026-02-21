@@ -1,3 +1,5 @@
+[⬅️Voltar](../readme.md)
+
 # Conceitos Avançados
 
 ---
@@ -10,23 +12,20 @@
 
 - Divisão de responsabilidade
 
-> 
+>
 
 ### 1.1 Como identificar contextos
 
 - Identificando Subdomínios
-  
   - Áreas específicas do negócio que podem ser tratadas isoladamente
 
 - Identificar termos exclusivos do contexto
 
 - Identificar como os contextos se relacionam
-  
   - Paciente ↔ Médico ↔ Financeiro
-  
   - Paciente ↔ Tratamento ↔ Iventário ↔ Financeiro
 
-> 
+>
 
 ### 1.2 Benefícios de Contextos Delimitados
 
@@ -48,7 +47,7 @@
 
 - 🔣 **Traduz dados externos** para um padrão aceito pelo nosso sistema
 
-> 
+>
 
 ### 2.1 Importância
 
@@ -56,7 +55,7 @@
 
 - Não são "plug and play"
 
-> 
+>
 
 ### 2.2 Benefícios
 
@@ -66,7 +65,7 @@
 
 - Melhoria na clareza
 
-> 
+>
 
 ### 2.3 Quando usar
 
@@ -76,7 +75,7 @@
 
 - Contextos com modelos conceitualmente diferentes
 
-> 
+>
 
 ### 2.4 Quando não usar
 
@@ -86,7 +85,7 @@
 
 - Apenas para abstração técnica
 
-> 
+>
 
 ### 2.5 Exemplo
 
@@ -103,27 +102,26 @@ export class User {
 // infrastructure/externalApi.js
 export async function fetchExternalUser(id) {
   return {
-    user_id: "123",
-    full_name: "João Silva",
-    balance_cents: 10500
+    user_id: '123',
+    full_name: 'João Silva',
+    balance_cents: 10500,
   };
 }
 
 // acl/UserTranslator.js
-import { User } from "../domain/User.js";
+import { User } from '../domain/User.js';
 
 export function toDomain(externalUser) {
   return new User(
     externalUser.user_id,
     externalUser.full_name,
-    externalUser.balance_cents / 100 // converte para reais
+    externalUser.balance_cents / 100, // converte para reais
   );
 }
 
-
 // infrastructure/UserRepository.js
-import { fetchExternalUser } from "./externalApi.js";
-import { toDomain } from "../acl/UserTranslator.js";
+import { fetchExternalUser } from './externalApi.js';
+import { toDomain } from '../acl/UserTranslator.js';
 
 export async function findUserById(id) {
   const externalUser = await fetchExternalUser(id);
@@ -131,4 +129,4 @@ export async function findUserById(id) {
 }
 ```
 
-
+[Início 🏠](../readme.md)

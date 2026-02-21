@@ -1,3 +1,5 @@
+[⬅️Voltar](../readme.md)
+
 # Agregados
 
 ---
@@ -7,11 +9,9 @@
 - Grupo de **entidades** e **objetos** que são tratados como uma **UNIDADE**
 
 - Compostos por:
-  
   1. Raiz do Agregado
-     
      - Controla o **acesso** ao agregado
-  
+
   2. Entidades e Objetos de Valor
 
 - As **regras de negócio** ficam contidas no escopo do **agregado**
@@ -51,3 +51,5 @@
 - Falicitam a manutenção
 
 <img src="../images/2026-02-10-11-49-08-image.png" />
+
+[Próximo ➡️](05-repositorios-e-servicos.md)

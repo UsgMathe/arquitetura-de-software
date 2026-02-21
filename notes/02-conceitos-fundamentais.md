@@ -1,3 +1,5 @@
+[⬅️Voltar](../readme.md)
+
 # Conceitos Fundamentais
 
 ---
@@ -25,12 +27,10 @@
 - "Coração do software"
 
 - Núcle do sistema
-  
   - Regras de negócio
   - Lógica central da aplicação
 
 - Arquitetura de Software:
-  
   - Estrutura organizacional
   - Interpretação de componentes
   - Permite que o domínio seja estruturalmente isolado
@@ -50,7 +50,7 @@
 
 - Camada em que o usuário interage **(Inputs)**
 
-> 
+>
 
 #### Aplicação [Serviços]:
 
@@ -64,7 +64,7 @@
 
 - Depende da camada de **Domínio**
 
-> 
+>
 
 #### Domínio [Entidades, Regras de negócio]:
 
@@ -74,7 +74,7 @@
 
 - Foco único no **Negócio**
 
-> 
+>
 
 #### Infraestutura [Banco de Dados, APIs Externas] :
 
@@ -97,7 +97,6 @@
 - Reúso
 
 - Boa para projetos de **PEQUENO E MÉDIO PORTE**
-  
   - **PODE SE TORNAR DIFÍCIL DE MANTER EM PROJETOS MAIORES**
 
 ---
@@ -113,6 +112,7 @@
 1. Portas de entrada (**Primary**)
 
 2. Portas de saída (**Secondary**)
+
 - Definem como o domínio pode ser **acessado**
 
 - Determinam como uma ação vai ser feita
@@ -120,12 +120,11 @@
 #### Adaptadores:
 
 1. Adaptador **Primário**
-   
    - Interface
 
 2. Adaptador **Secundário**
-   
    - Infraestrutura
+
 - Implementações concretas das portas
 
 - Repositório
@@ -145,5 +144,6 @@
 - Reúso
 
 - Boa para projetos de **GRANDE PORTE**
-  
   - **PODE SE TORNAR DIFÍCIL DE USAR EM PROJETOS MENORES**
+
+[Próximo ➡️](03-entidades-e-objetos-de-valor.md)
