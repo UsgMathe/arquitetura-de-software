@@ -22,11 +22,7 @@
 
 - **Infrastructure** → detalhes técnicos
 
-
-
 ---
-
-
 
 # 🧠 DOMAIN
 
